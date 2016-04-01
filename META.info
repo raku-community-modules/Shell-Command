@@ -9,8 +9,7 @@
         "Test"
     ],
     "depends" : [
-        "File::Find",
-        "File::Which"
+        "File::Find"
     ],
     "provides" : {
         "Shell::Command" : "lib/Shell/Command.pm"
