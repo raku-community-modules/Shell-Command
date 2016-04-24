@@ -44,6 +44,6 @@ rm_rf 't/dir2';
 if $*DISTRO.is-win || ($*DISTRO.name eq 'macosx') {
   skip 'which is not working properly on Windows/Mac OS X. Please use File::Which', 2;
 } else {
-  ok which('ls).IO.x, 'which - ls is found';
+  ok which('ls').IO.x, 'which - ls is found';
   nok which('scoodelyboopersnake'), 'which - missing exe is false';
 }
