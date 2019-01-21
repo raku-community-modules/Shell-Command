@@ -35,6 +35,10 @@ my $perl6_path = which('perl6');
 
 # Concatenate the contents of a file or list of files and print to STDOUT
 cat "file1.txt", "file2.txt";
+
+# A cross platfrom syncronous run()
+my $command = $*DISTRO.is-win ?? 'binary.exe' !! 'binary';
+run-command($binary, 'some', 'parameter');
 ```
 ## See Also
 - [Shell::Command](https://metacpan.org/pod/Shell::Command)
@@ -57,6 +61,7 @@ cat "file1.txt", "file2.txt";
 - Tobias Leich
 - Tim Smith
 - Ahmad M. Zawawi (azawawi @ #perl6)
+- Martin Barth
 
 ## LICENSE
 
