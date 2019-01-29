@@ -4,6 +4,11 @@ unit module Shell::Command;
 
 use File::Find;
 
+my @run-invoke = BEGIN $*DISTRO.is-win ?? <cmd.exe /x/d/c>.Slip !! '';
+sub run-command(*@_, *%_) is export {
+    run (|@run-invoke, |@_).grep(*.?chars), |%_
+}
+
 sub cat(*@files) is export {
     for @files -> $f {
         given open($f) {
