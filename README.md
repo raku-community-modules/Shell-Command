@@ -3,7 +3,7 @@
 NAME
 ====
 
-Shell::Command - provide **cross-platform** routines emulating common \*NIX shell commands
+Shell::Command - provide cross-platform routines emulating common *NIX shell commands
 
 SYNOPSIS
 ========

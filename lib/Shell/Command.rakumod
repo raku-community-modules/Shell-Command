@@ -9,12 +9,7 @@ sub run-command(*@_, *%_) is export {
 
 sub cat(*@files) is export {
     for @files -> $f {
-        given open($f) {
-            for .lines -> $line {
-                say $line;
-            }
-            .close
-        }
+        .say for $f.IO.lines;
     }
 }
 
@@ -100,7 +95,7 @@ sub which($name) is export {
 
 =head1 NAME
 
-Shell::Command - provide **cross-platform** routines emulating common \*NIX shell commands
+Shell::Command - provide cross-platform routines emulating common *NIX shell commands
 
 =head1 SYNOPSIS
 
