@@ -1,9 +1,4 @@
-use v6;
-
 use Test;
-
-use lib 'lib';
-
 use Shell::Command;
 
 plan 16;
@@ -44,7 +39,9 @@ rm_rf 't/dir2';
 if $*DISTRO.is-win || ($*DISTRO.name eq 'macosx') {
   skip 'which is not working properly on Windows/Mac OS X. Please use File::Which', 2;
 } else {
-  my $perl6 = which('perl6');
-  ok $perl6.defined && $perl6.IO.x, 'which - perl6 is found on PATH';
+  my $raku = which('raku');
+  ok $raku.defined && $raku.IO.x, 'which - raku is found on PATH';
   nok which('scoodelyboopersnake'), 'which - missing exe is false';
 }
+
+# vim: expandtab shiftwidth=4

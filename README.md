@@ -1,68 +1,82 @@
-# Shell::Command
+[![Actions Status](https://github.com/raku-community-modules/Shell-Command/actions/workflows/test.yml/badge.svg)](https://github.com/raku-community-modules/Shell-Command/actions)
+
+NAME Shell::Command
+===================
 
 Provides **cross-platform** routines emulating common \*NIX shell commands
 
-## Build Status
+SYNOPSIS
+========
 
-| Operating System  |   Build Status  | CI Provider |
-| ----------------- | --------------- | ----------- |
-| Linux / Mac OS X  | [![Build Status](https://travis-ci.org/tadzik/Shell-Command.svg?branch=master)](https://travis-ci.org/tadzik/Shell-Command)  | Travis CI |
-| Windows 7 64-bit  | [![Build status](https://ci.appveyor.com/api/projects/status/github/tadzik/Shell-Command?svg=true)](https://ci.appveyor.com/project/tadzik/Shell-Command/branch/master)  | AppVeyor |
+    use Shell::Command;
 
-## Example
+    # Recursive folder copy
+    cp 't/dir1', 't/dir2', :r;
 
-```Perl6
-use v6;
-use Shell::Command;
+    # Remove a file
+    rm_f 'to_delete';
 
-# Recursive folder copy
-cp 't/dir1', 't/dir2', :r;
+    # Remove directory
+    rmdir 't/dupa/foo/bar';
 
-# Remove a file
-rm_f 'to_delete';
+    # Make path
+    mkpath 't/dir2';
 
-# Remove directory
-rmdir 't/dupa/foo/bar';
+    # Remove path
+    rm_rf 't/dir2';
 
-# Make path
-mkpath 't/dir2';
+    # Find Raku in executable path
+    my $raku-path = which('raku');
 
-# Remove path
-rm_rf 't/dir2';
+    # Concatenate the contents of a file or list of files and print to STDOUT
+    cat "file1.txt", "file2.txt";
 
-# Find perl6 in executable path
-my $perl6_path = which('perl6');
+    # A cross platfrom syncronous run()
+    my $command = $*DISTRO.is-win ?? 'binary.exe' !! 'binary';
+    run-command($binary, 'some', 'parameter');
 
-# Concatenate the contents of a file or list of files and print to STDOUT
-cat "file1.txt", "file2.txt";
+AUTHOR
+======
 
-# A cross platfrom syncronous run()
-my $command = $*DISTRO.is-win ?? 'binary.exe' !! 'binary';
-run-command($binary, 'some', 'parameter');
-```
-## See Also
-- [Shell::Command](https://metacpan.org/pod/Shell::Command)
+Tadeusz “tadzik” Sośnierz"
 
-## Author
+COPYRIGHT AND LICENSE
+=====================
 
-- Tadeusz “tadzik” Sośnierz"
+Copyright 2010-2017 Tadeusz Sośnierz Copyright 2023 Raku Community
 
-## Contributors
-- Dagur Valberg Johansson
-- Elizabeth Mattijsen
-- Filip Sergot
-- Geoffrey Broadwell
-- GlitchMr
-- Heather
-- Kamil Kułaga
-- Moritz Lenz
-- Steve Mynott
-- timo
-- Tobias Leich
-- Tim Smith
-- Ahmad M. Zawawi (azawawi @ #perl6)
-- Martin Barth
+This library is free software; you can redistribute it and/or modify it under the MIT license.
 
-## LICENSE
+Please see the LICENCE file in the distribution
 
-MIT License
+CONTRIBUTORS
+============
+
+  * Dagur Valberg Johansson
+
+  * Elizabeth Mattijsen
+
+  * Filip Sergot
+
+  * Geoffrey Broadwell
+
+  * GlitchMr
+
+  * Heather
+
+  * Kamil Kułaga
+
+  * Moritz Lenz
+
+  * Steve Mynott
+
+  * timo
+
+  * Tobias Leich
+
+  * Tim Smith
+
+  * Ahmad M. Zawawi (azawawi @ #raku)
+
+  * Martin Barth
+

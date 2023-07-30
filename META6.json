@@ -1,39 +1,41 @@
 {
-    "perl"        : "6.*",
-    "name"        : "Shell::Command",
-    "version"     : "*",
-    "description" : "Common shell command replacements",
-    "build-depends" : [
-        "File::Find"
-    ],
-    "test-depends" : [
-        "Test"
-    ],
-    "depends" : [
-        "File::Which",
-        "File::Find"
-    ],
-    "provides" : {
-        "Shell::Command" : "lib/Shell/Command.pm"
-    },
-    "authors" : [
-        "Tadeusz “tadzik” Sośnierz",
-        "Dagur Valberg Johansson",
-        "Elizabeth Mattijsen",
-        "Filip Sergot",
-        "Geoffrey Broadwell",
-        "GlitchMr",
-        "Heather",
-        "Kamil Kułaga",
-        "Moritz Lenz",
-        "Steve Mynott",
-        "timo",
-        "Tobias Leich",
-        "Tim Smith"
-    ],
-    "support" : {
-        "bugtracker" : "https://github.com/tadzik/Shell-Command/issues",
-        "source" : "git://github.com/tadzik/Shell-Command.git"
-    },
-    "source-url"  : "git://github.com/tadzik/Shell-Command.git"
+  "auth": "zef:raku-community-modules",
+  "authors": [
+    "Tadeusz “tadzik” Sośnierz",
+    "Dagur Valberg Johansson",
+    "Elizabeth Mattijsen",
+    "Filip Sergot",
+    "Geoffrey Broadwell",
+    "GlitchMr",
+    "Heather",
+    "Kamil Kułaga",
+    "Moritz Lenz",
+    "Steve Mynott",
+    "timo",
+    "Tobias Leich",
+    "Tim Smith"
+  ],
+  "build-depends": [
+    "File::Find"
+  ],
+  "depends": [
+    "File::Which",
+    "File::Find"
+  ],
+  "description": "Provide **cross-platform** routines emulating common \*NIX shell commands",
+  "license": "MIT",
+  "name": "Shell::Command",
+  "perl": "6.*",
+  "provides": {
+    "Shell::Command": "lib/Shell/Command.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "git://github.com/raku-community-modules/Shell-Command.git",
+  "tags": [ "SHELL", "UNIX"
+  ],
+  "test-depends": [
+    "Test"
+  ],
+  "version": "1.0"
 }

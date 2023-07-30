@@ -1,5 +1,3 @@
-use v6;
-
 unit module Shell::Command;
 
 use File::Find;
@@ -98,4 +96,71 @@ sub which($name) is export {
   Str
 }
 
-# vim: ft=perl6
+=begin pod
+
+=head1 NAME
+
+Shell::Command - provide **cross-platform** routines emulating common \*NIX shell commands
+
+=head1 SYNOPSIS
+
+    use Shell::Command;
+
+    # Recursive folder copy
+    cp 't/dir1', 't/dir2', :r;
+
+    # Remove a file
+    rm_f 'to_delete';
+
+    # Remove directory
+    rmdir 't/dupa/foo/bar';
+
+    # Make path
+    mkpath 't/dir2';
+
+    # Remove path
+    rm_rf 't/dir2';
+
+    # Find Raku in executable path
+    my $raku-path = which('raku');
+
+    # Concatenate the contents of a file or list of files and print to STDOUT
+    cat "file1.txt", "file2.txt";
+
+    # A cross platfrom syncronous run()
+    my $command = $*DISTRO.is-win ?? 'binary.exe' !! 'binary';
+    run-command($binary, 'some', 'parameter');
+
+=head1 AUTHOR
+
+Tadeusz “tadzik” Sośnierz"
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright 2010-2017 Tadeusz Sośnierz
+Copyright 2023 Raku Community
+        
+This library is free software; you can redistribute it and/or modify it under the MIT license.
+    
+Please see the LICENCE file in the distribution
+
+=head1 CONTRIBUTORS
+
+=item Dagur Valberg Johansson
+=item Elizabeth Mattijsen
+=item Filip Sergot
+=item Geoffrey Broadwell
+=item GlitchMr
+=item Heather
+=item Kamil Kułaga
+=item Moritz Lenz
+=item Steve Mynott
+=item timo
+=item Tobias Leich
+=item Tim Smith
+=item Ahmad M. Zawawi (azawawi @ #raku)
+=item Martin Barth
+
+=end pod
+
+# vim: expandtab shiftwidth=4
