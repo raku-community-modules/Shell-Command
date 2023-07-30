@@ -22,7 +22,7 @@
     "File::Which",
     "File::Find"
   ],
-  "description": "Provide **cross-platform** routines emulating common *NIX shell commands",
+  "description": "provide **cross-platform** routines emulating common \\*NIX shell commands",
   "license": "MIT",
   "name": "Shell::Command",
   "perl": "6.*",
@@ -32,7 +32,9 @@
   "resources": [
   ],
   "source-url": "git://github.com/raku-community-modules/Shell-Command.git",
-  "tags": [ "SHELL", "UNIX"
+  "tags": [
+    "SHELL",
+    "UNIX"
   ],
   "test-depends": [
     "Test"

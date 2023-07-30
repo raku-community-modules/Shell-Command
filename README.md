@@ -1,9 +1,9 @@
 [![Actions Status](https://github.com/raku-community-modules/Shell-Command/actions/workflows/test.yml/badge.svg)](https://github.com/raku-community-modules/Shell-Command/actions)
 
-NAME Shell::Command
-===================
+NAME
+====
 
-Provides **cross-platform** routines emulating common \*NIX shell commands
+Shell::Command - provide **cross-platform** routines emulating common \*NIX shell commands
 
 SYNOPSIS
 ========
