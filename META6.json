@@ -22,7 +22,7 @@
     "File::Which",
     "File::Find"
   ],
-  "description": "Provide **cross-platform** routines emulating common \*NIX shell commands",
+  "description": "Provide **cross-platform** routines emulating common *NIX shell commands",
   "license": "MIT",
   "name": "Shell::Command",
   "perl": "6.*",
