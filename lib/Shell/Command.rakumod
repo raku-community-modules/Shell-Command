@@ -6,8 +6,8 @@ my sub run-command(*@_, *%_) is export {
     run (|@run-invoke, |@_).grep(*.?chars), |%_
 }
 
-my sub cat(*@files) is export {
-    .say for @files.map(*.IO.slurp);
+my sub cat(*@files) is export {  # UNCOVERABLE
+    .say for @files.map(*.IO.slurp);  # UNCOVERABLE
 }
 
 my sub rm_f(*@files) is export {
@@ -56,9 +56,6 @@ my sub mkpath(*@paths) is export {
 }
 
 my sub which($name) is export {
-    warn "Please use File::Which instead for a more portable solution."
-      if $*DISTRO.is-win || $*DISTRO.name eq 'macos';
-
     for $*SPEC.path.map({ $*SPEC.catfile($^dir, $name) }) {
         return $_ if .IO.x;
     }
@@ -67,6 +64,6 @@ my sub which($name) is export {
 
 #- hack ------------------------------------------------------------------------
 # To allow version
-unit module Shell::Command:ver<1.1>:auth<zef:lizmat>;
+unit module Shell::Command:ver<1.2>:auth<zef:lizmat>;
 
 # vim: expandtab shiftwidth=4

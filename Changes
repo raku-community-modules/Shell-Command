@@ -1,6 +1,8 @@
 Revision history for Shell-Command
 
 {{$NEXT}}
+
+1.2  2025-08-05T12:32:06+02:00
     - Tighten dependency on File::Find
     - Remove dependency on File::Which, it is no (longer?) needed
     - Update META and pod
