@@ -1,7 +1,13 @@
 use Test;
 use Shell::Command;
 
-plan 16;
+plan 19;
+
+my $proc := run-command <echo foo>, :out;
+is $proc.exitcode, 0, "exit code should be 0";
+is $proc.out.slurp(:close), "foo\n", 'was the output correct';
+
+lives-ok { cat $*PROGRAM }, "could we execute 'cat'";
 
 mkpath 't/dupa/foo/bar';
 ok ('t/dupa/foo'.IO ~~ :d), 'mkpath, 1/2';
@@ -37,11 +43,12 @@ ok 't/dir2/file.foo'.IO.f, '#5';
 rm_rf 't/dir2';
 
 if $*DISTRO.is-win || ($*DISTRO.name eq 'macosx') {
-  skip 'which is not working properly on Windows/Mac OS X. Please use File::Which', 2;
-} else {
-  my $raku = which('raku');
-  ok $raku.defined && $raku.IO.x, 'which - raku is found on PATH';
-  nok which('scoodelyboopersnake'), 'which - missing exe is false';
+    skip 'which is not working properly on Windows/Mac OS X. Please use File::Which', 2;
+}
+else {
+    my $raku = which('raku');
+    ok $raku.defined && $raku.IO.x, 'which - raku is found on PATH';
+    nok which('scoodelyboopersnake'), 'which - missing exe is false';
 }
 
 # vim: expandtab shiftwidth=4

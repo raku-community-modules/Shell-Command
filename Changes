@@ -1,6 +1,14 @@
 Revision history for Shell-Command
 
 {{$NEXT}}
+    - Tighten dependency on File::Find
+    - Remove dependency on File::Which, it is no (longer?) needed
+    - Update META and pod
+    - Cleanup code, remove unimplemented / undocumented features
+    - Simplify "cat" logic further
+    - Add coverage tests (at 100%)
+    - Add CI badge for each OS
+    - Update copyright year
 
 1.1  2023-07-30T21:34:55+02:00
     - simplify "cat" logic

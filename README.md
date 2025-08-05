@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/raku-community-modules/Shell-Command/actions/workflows/test.yml/badge.svg)](https://github.com/raku-community-modules/Shell-Command/actions)
+[![Actions Status](https://github.com/raku-community-modules/Shell-Command/actions/workflows/linux.yml/badge.svg)](https://github.com/raku-community-modules/Shell-Command/actions) [![Actions Status](https://github.com/raku-community-modules/Shell-Command/actions/workflows/macos.yml/badge.svg)](https://github.com/raku-community-modules/Shell-Command/actions) [![Actions Status](https://github.com/raku-community-modules/Shell-Command/actions/workflows/windows.yml/badge.svg)](https://github.com/raku-community-modules/Shell-Command/actions)
 
 NAME
 ====
@@ -8,46 +8,41 @@ Shell::Command - provide cross-platform routines emulating common *NIX shell com
 SYNOPSIS
 ========
 
-    use Shell::Command;
+```raku
+use Shell::Command;
 
-    # Recursive folder copy
-    cp 't/dir1', 't/dir2', :r;
+# Recursive folder copy
+cp 't/dir1', 't/dir2', :r;
 
-    # Remove a file
-    rm_f 'to_delete';
+# Remove a file
+rm_f 'to_delete';
 
-    # Remove directory
-    rmdir 't/dupa/foo/bar';
+# Remove directory
+rmdir 't/dupa/foo/bar';
 
-    # Make path
-    mkpath 't/dir2';
+# Make path
+mkpath 't/dir2';
 
-    # Remove path
-    rm_rf 't/dir2';
+# Remove path
+rm_rf 't/dir2';
 
-    # Find Raku in executable path
-    my $raku-path = which('raku');
+# Find Raku in executable path
+my $raku-path = which('raku');
 
-    # Concatenate the contents of a file or list of files and print to STDOUT
-    cat "file1.txt", "file2.txt";
+# Concatenate the contents of a file or list of files and print to STDOUT
+cat "file1.txt", "file2.txt";
 
-    # A cross platfrom syncronous run()
-    my $command = $*DISTRO.is-win ?? 'binary.exe' !! 'binary';
-    run-command($binary, 'some', 'parameter');
+# A cross platfrom syncronous run()
+my $command = $*DISTRO.is-win ?? 'binary.exe' !! 'binary';
+run-command($binary, 'some', 'parameter');
+```
 
 AUTHOR
 ======
 
-Tadeusz “tadzik” Sośnierz"
+Tadeusz Sośnierz
 
-COPYRIGHT AND LICENSE
-=====================
-
-Copyright 2010-2017 Tadeusz Sośnierz Copyright 2023 Raku Community
-
-This library is free software; you can redistribute it and/or modify it under the MIT license.
-
-Please see the LICENCE file in the distribution
+Source can be located at: https://github.com/raku-community-modules/Shell-Command . Comments and Pull Requests are welcome.
 
 CONTRIBUTORS
 ============
@@ -70,7 +65,7 @@ CONTRIBUTORS
 
   * Steve Mynott
 
-  * timo
+  * Timo Paulssen
 
   * Tobias Leich
 
@@ -79,4 +74,15 @@ CONTRIBUTORS
   * Ahmad M. Zawawi (azawawi @ #raku)
 
   * Martin Barth
+
+COPYRIGHT AND LICENSE
+=====================
+
+Copyright 2010-2017 Tadeusz Sośnierz
+
+Copyright 2023-2025 Raku Community
+
+This library is free software; you can redistribute it and/or modify it under the MIT license.
+
+Please see the LICENCE file in the distribution
 

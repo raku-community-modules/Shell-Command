@@ -1,7 +1,7 @@
 {
   "auth": "zef:raku-community-modules",
   "authors": [
-    "Tadeusz “tadzik” Sośnierz",
+    "Tadeusz Sośnierz",
     "Dagur Valberg Johansson",
     "Elizabeth Mattijsen",
     "Filip Sergot",
@@ -11,16 +11,15 @@
     "Kamil Kułaga",
     "Moritz Lenz",
     "Steve Mynott",
-    "timo",
+    "Timo Paulssen",
     "Tobias Leich",
     "Tim Smith"
   ],
   "build-depends": [
-    "File::Find"
+    "File::Find:ver<0.2.2+>:auth<zef:raku-community-modules>"
   ],
   "depends": [
-    "File::Which",
-    "File::Find"
+    "File::Find:ver<0.2.2+>:auth<zef:raku-community-modules>"
   ],
   "description": "provide cross-platform routines emulating common *NIX shell commands",
   "license": "MIT",
@@ -31,7 +30,12 @@
   },
   "resources": [
   ],
-  "source-url": "git://github.com/raku-community-modules/Shell-Command.git",
+  "source-url": "https://github.com/raku-community-modules/Shell-Command.git",
+  "support": {
+    "bugtracker": "https://github.com/raku-community-moduled/Shell-Command/issues",
+    "email": "community@raku.org",
+    "source": "git://github.com/raku-community-modules/Shell-Command.git"
+  },
   "tags": [
     "SHELL",
     "UNIX"
